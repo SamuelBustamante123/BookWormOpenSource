@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:gravity="center"
+	>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="70dp"
+		android:color="@color/blue2"
+		android:background="@color/blue2"
+		android:gravity="bottom|center"
+		android:orientation="horizontal">
+
+		<TextView style="@style/whitebold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="@string/app_name"
+			android:textAlignment="center"
+			android:textSize="36sp" />
+	</LinearLayout>
+
+	<TextView android:id="@+id/bookentrytitle"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_marginTop="10dp" android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp" android:gravity="center_horizontal"
+		android:textSize="28sp"
+		android:maxLines="3" android:ellipsize="end" style="@style/blackbold" />
+
+	<TextView android:id="@+id/bookentryauthors"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_marginTop="10dp" android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp" android:gravity="center_horizontal"
+		android:textColor="@color/blue1"
+		style="@style/blackmed" />
+
+	<ImageView android:id="@+id/bookentrycover"
+		android:layout_width="220dp" android:layout_height="335dp"
+		android:layout_marginTop="5dp" android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp" />
+
+	<Button android:id="@+id/bookentryaddbutton"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_marginTop="10dp" android:text="@string/btnAddBook" style="@style/black" />
+
+	<TextView android:id="@+id/bookentrywarndupe"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_marginTop="10dp" android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp" android:gravity="center_horizontal"
+		android:textAlignment="center"
+		style="@style/blacksmall" android:visibility="invisible"
+		android:text="@string/msgWarnDupe" />
+
+
+
+</LinearLayout>
+

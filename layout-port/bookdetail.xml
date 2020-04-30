@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="70dp"
+		android:color="@color/blue2"
+		android:background="@color/blue2"
+		android:gravity="bottom|center"
+		android:orientation="horizontal">
+
+	<TextView style="@style/whitebold"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:text="@string/app_name"
+		android:textAlignment="center"
+		android:textSize="36sp" />
+	</LinearLayout>
+
+	<!--
+		redo this and align things without margins, also need landscape rev
+	-->
+	<!--
+		remove stuff that's not there, don't let if affect layout?
+		android:layout_alignWithParentIfMissing="true"
+	-->
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:paddingTop="69dp">
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<ImageView
+				android:id="@+id/bookcover"
+				android:layout_width="220dp"
+				android:layout_height="335dp"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="69dp"
+				android:layout_marginRight="10dp"
+				android:background="@drawable/border1"
+				android:layout_centerHorizontal="true"/>
+
+			<TextView
+				android:id="@+id/booktitle"
+				style="@style/subtitleblack"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:layout_below="@id/bookcover"
+				android:layout_marginLeft="30dp"
+				android:layout_marginRight="30dp"
+				android:gravity="center"
+				android:textSize="30sp"
+				android:textAlignment="center"
+				android:ellipsize="end"
+				android:maxLines="2" />
+
+			<TextView
+				android:id="@+id/booksubtitle"
+				style="@style/subsubtitledkred"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/booktitle"
+				android:layout_marginLeft="30dp"
+				android:layout_marginTop="10dp"
+				android:layout_marginRight="30dp"
+				android:textAlignment="center"
+				android:ellipsize="end"
+				android:textSize="18sp"
+				android:textColor="@color/blue1"
+				android:gravity="center_horizontal"
+				android:maxLines="2" />
+
+	<!--
+        several bug reports note this, if you ellipsize you only get 2 lines
+        :( android:ellipsize="end"
+    -->
+
+			<TextView
+				android:id="@+id/bookauthors"
+				style="@style/blackmed"
+				android:layout_width="wrap_content"
+				android:layout_height="100dp"
+				android:layout_below="@id/booksubtitle"
+				android:layout_marginTop="20dp"
+				android:layout_centerHorizontal="true"
+				android:textSize="14sp"
+				android:maxLines="4" />
+
+			<CheckBox
+				android:id="@+id/bookreadstatus"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/bookauthors"
+				android:layout_marginLeft="20dp"
+				android:layout_marginTop="17dp"
+				android:layout_marginRight="2dp"
+				android:layout_toRightOf="@id/bookreadstatuslabel"
+				android:gravity="right" />
+
+			<TextView
+				android:id="@+id/bookreadstatuslabel"
+				style="@style/blacksmall"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/bookauthors"
+				android:layout_marginLeft="140dp"
+				android:layout_marginTop="30dp"
+				android:layout_marginRight="10dp"
+				android:text="@string/labelHaveRead" />
+
+			<RatingBar
+				android:id="@+id/bookrating"
+				android:layout_width="285dip"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/bookauthors"
+				android:layout_centerHorizontal="true"
+				android:layout_marginLeft="15dp"
+				android:layout_marginTop="-61dp"
+				android:layout_marginRight="10dp"
+				android:numStars="5"
+				android:stepSize="1.0" />
+
+			<TextView android:id="@+id/booksubject" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_marginTop="5dp"
+				android:layout_marginLeft="10dp" android:layout_marginRight="15dp"
+				android:layout_below="@id/booksubtitle" style="@style/blacksmall"
+				android:textAlignment="center"
+				android:textSize="14sp"
+				android:lines="1" android:ellipsize="end" />
+
+			<TextView android:id="@+id/bookpublisher"
+				android:layout_width="150dp" android:layout_height="wrap_content"
+				android:layout_marginTop="8dp" android:layout_marginBottom="10dp"
+				android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+				android:layout_below="@id/booksubject" style="@style/blacksmall"
+				android:textSize="14sp"
+				android:lines="1" android:ellipsize="end" />
+			<TextView android:id="@+id/bookdatepub" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_marginTop="2dp"
+				android:layout_marginBottom="12dp" android:layout_marginLeft="8dp"
+				android:layout_marginRight="10dp" android:layout_below="@id/booksubject"
+				android:textSize="14sp"
+				android:layout_toRightOf="@id/bookpublisher" android:gravity="right"
+				style="@style/blacksmall" />
+
+			<TextView
+				android:layout_width="250dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/bookreadstatuslabel"
+				android:layout_marginTop="20dp"
+				android:layout_marginLeft="145dp"
+				android:text="@string/bookmarkLabel" />
+
+			<EditText
+				android:id="@+id/bookmark"
+				android:inputType="number"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:layout_below="@id/bookreadstatuslabel"
+				android:layout_marginLeft="248dp"
+				android:layout_marginTop="20dp" />
+
+            <Spinner
+                android:id="@+id/spinnerF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "740dp"/>
+			<Button android:id="@+id/updateFolderButton"
+				android:layout_width="150dp" android:layout_height="wrap_content"
+				android:layout_marginTop="800dp" android:layout_marginBottom="10dp"
+				android:layout_marginLeft="20dp" android:layout_marginRight="10dp"
+				style="@style/button"
+				android:text="@string/updateFolder" />
+
+
+			<RelativeLayout android:orientation="vertical"
+				android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:layout_below="@id/bookmark">
+
+				<View style="@style/divider"
+					android:layout_marginTop="5dp"/>
+
+				<TextView android:id="@+id/bookdetailnotelabel"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:layout_marginTop="100dp" android:layout_marginLeft="10dp"
+					android:layout_marginRight="10dp"
+					style="@style/blackmed" android:gravity="center"
+					android:text="@string/labelNotes" />
+				<EditText android:id="@+id/bookdetailnote"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:layout_marginTop="10dp" android:layout_marginLeft="10dp"
+					android:layout_marginRight="10dp" android:layout_below="@id/bookdetailnotelabel"
+					android:autoLink="all" android:autoText="true" android:capitalize="sentences"
+					android:freezesText="true"
+					android:textAlignment="center"
+					android:gravity="center_horizontal"
+					style="?android:attr/textViewStyle" android:background="@null" android:textColor="@android:color/black"/>
+
+				<LinearLayout android:orientation="horizontal"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:layout_below="@id/bookdetailnote" android:gravity="center">
+					<Button android:id="@+id/bookdetailbutton"
+						android:layout_width="150dp" android:layout_height="wrap_content"
+						android:layout_marginTop="10dp" android:layout_marginBottom="10dp"
+						android:layout_marginLeft="10dp" android:layout_marginRight="10dp"
+						style="@style/button" />
+				</LinearLayout>
+			</RelativeLayout>
+		</RelativeLayout>
+	</ScrollView>
+	<include layout="@layout/bookdetaildrawer"/>
+</RelativeLayout>
